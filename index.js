@@ -7,7 +7,7 @@ var employeeClontroller =require('./controllers/employeeController.js')
 
 var app= express();
 app.use(bodyParser.json());
-app.use(cors({origin:'http://localhost:3001'})); 
+app.use(cors()); 
 
 app.listen(process.env.PORT || 8080, () => console.log('server started at port 3000'));
 
