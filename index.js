@@ -9,6 +9,7 @@ var app= express();
 app.use(bodyParser.json());
 app.use(cors()); 
 app.use('/', express.static('public/public'));
+
 app.listen(process.env.PORT || 3000, () => console.log('server started at port' + process.env.PORT));
 
 app.use('/employees', employeeClontroller)
