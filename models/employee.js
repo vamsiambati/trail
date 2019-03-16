@@ -5,7 +5,11 @@ var Employee = mongoose.model('Employee',{
     position:{type: String},
     office:{type: String},
     salary:{type:Number},
+});
+
+var EmployeeImage = mongoose.model('EmployeeImage',{
+    idFromEmployee: {type: String},
     imageData:{type:String}
 });
 
-module.exports = {Employee};
+module.exports = {Employee, EmployeeImage};
