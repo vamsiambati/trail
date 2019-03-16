@@ -71,7 +71,7 @@ router.delete('/:id',(req, res)=>{
 });
 
 router.post('/search',(req,res)=>{
-    Employee.find(req.body,(err,docs)=>{
+    Employee.find({ name: { '$regex': '^'+req.body.name+'[a-zA-Z]*$', '$options': 'i' } },(err,docs)=>{
         if(!err) {res.send(docs)}
        else res.status(500).send('No data:'+ JSON.stringify(err, undefined, 2))
     })
