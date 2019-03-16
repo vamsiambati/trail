@@ -27,7 +27,8 @@ router.post('/', (req, res)=>{
         name: req.body.name,
         position: req.body.position,
         office: req.body.office,
-        salary: req.body.salary
+        salary: req.body.salary,
+        imageData: req.body.imageData
     });
     emp.save((err, docs)=>{
         if(!err) {res.send(docs);}
@@ -43,7 +44,8 @@ router.put('/:id',(req, res)=>{
         name: req.body.name,
         position: req.body.position,
         office: req.body.office,
-        salary: req.body.salary
+        salary: req.body.salary,
+        imageData: req.body.imageData
       };
       Employee.findByIdAndUpdate(req.params.id,{$set: emp}, {new:true}, (err,docs)=>{
           if(!err) {res.send(docs)}
